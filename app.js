@@ -134,3 +134,52 @@ for(let i = 0; i < liEven.length; i++){
 console.log(items);
 
 console.clear();
+
+//traverse the dom - move up & down
+let val;
+const list = document.querySelector('ul');
+const listItem = document.querySelector('li.collection-item:first-child');
+
+val = listItem;
+val = list;
+
+// get child nodelist - the text item is just the line breaks in the html
+val = list.childNodes;
+val = list.childNodes[0];
+val = list.childNodes[0].nodeName;
+val = list.childNodes[1].nodeType;
+
+// above, the nodeType returns a number. The list bellow show the meanings
+
+//1 - element
+//2 - attribute (deprecated)
+//3 - text node
+//8 - comment
+//9 - document itself
+//10 - Doctype
+
+// get only children nodes - return html collection, no text
+val = list.children;
+val = list.children[1].textContent = 'hello';
+val = list.children[0].children;
+
+val = list.firstChild;
+val = list.firstElementChild;
+
+val = list.lastChild;
+val = list.lastElementChild;
+
+val = list.childElementCount;
+
+val = listItem.parentNode;
+val = listItem.parentElement;
+val = listItem.parentElement.parentElement;
+
+val = listItem.nextSibling;
+val = listItem.nextElementSibling;
+val = listItem.nextElementSibling.nextElementSibling;
+
+val = listItem.previousSibling;
+val = listItem.previousElementSibling;
+
+console.log(val);
