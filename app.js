@@ -334,32 +334,68 @@ console.clear();
 
 // keyboard events
 
-const form = document.querySelector('form');
-const taskInput = document.querySelector('#task');
-const heading = document.querySelector('h5');
+// const form = document.querySelector('form');
+// const taskInput = document.querySelector('#task');
+// const heading = document.querySelector('h5');
 
-taskInput.value = '';
+// taskInput.value = '';
 
-// form.addEventListener('submit', runEvent);
+// // form.addEventListener('submit', runEvent);
 
-// taskInput.addEventListener('keydown', runEvent);
-// taskInput.addEventListener('keyup', runEvent);
-// taskInput.addEventListener('keypress', runEvent);
+// // taskInput.addEventListener('keydown', runEvent);
+// // taskInput.addEventListener('keyup', runEvent);
+// // taskInput.addEventListener('keypress', runEvent);
 
-taskInput.addEventListener('focus', runEvent);
-taskInput.addEventListener('blur', runEvent);
-taskInput.addEventListener('cut', runEvent);
-taskInput.addEventListener('copy', runEvent);
-taskInput.addEventListener('paste', runEvent);
-//any kind off event from the user
-taskInput.addEventListener('input', runEvent);
-//change - when a change occurs in the select tag
-taskInput.addEventListener('change', runEvent);
+// taskInput.addEventListener('focus', runEvent);
+// taskInput.addEventListener('blur', runEvent);
+// taskInput.addEventListener('cut', runEvent);
+// taskInput.addEventListener('copy', runEvent);
+// taskInput.addEventListener('paste', runEvent);
+// //any kind off event from the user
+// taskInput.addEventListener('input', runEvent);
+// //change - when a change occurs in the select tag
+// taskInput.addEventListener('change', runEvent);
 
-function runEvent(event){
-  console.log(`Event type: ${event.type}`)
-  console.log(event.target.value);
-  // heading.innerText = event.target.value;
-  // event.preventDefault();
-  // console.log(taskInput.value);
+// function runEvent(event){
+//   console.log(`Event type: ${event.type}`)
+//   console.log(event.target.value);
+//   // heading.innerText = event.target.value;
+//   // event.preventDefault();
+//   // console.log(taskInput.value);
+// }
+
+console.clear();
+
+// event bubbling
+
+// document.querySelector('.card-title').addEventListener('click', () => {
+//   console.log('card title');
+// });
+
+// document.querySelector('.card-content').addEventListener('click', () => {
+//   console.log('card content');
+// });
+
+// document.querySelector('.card').addEventListener('click', () => {
+//   console.log('card');
+// });
+
+// document.querySelector('.col').addEventListener('click', () => {
+//   console.log('col');
+// });
+
+// const delItem = document.querySelector('.delete-item');
+
+// delItem.addEventListener('click', deleteItem);
+
+document.body.addEventListener('click', deleteItem);
+
+function deleteItem (event){
+  // if(event.target.parentElement.classList === 'delete-item'){
+  //   console.log('delete');
+  // }
+  if(event.target.parentElement.classList.contains('delete-item')){
+    console.log('delete');
+    event.target.parentElement.parentElement.remove();
+  }
 }
