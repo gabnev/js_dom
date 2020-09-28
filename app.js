@@ -305,9 +305,9 @@ console.clear();
 
 // mouve events
 
-const clearBtn = document.querySelector('.clear-tasks');
-const card = document.querySelector('.card');
-const heading = document.querySelector('h5');
+// const clearBtn = document.querySelector('.clear-tasks');
+// const card = document.querySelector('.card');
+// const heading = document.querySelector('h5');
 
 // // clearBtn.addEventListener('click', runEvent);
 // // clearBtn.addEventListener("dblclick", runEvent);
@@ -320,14 +320,46 @@ const heading = document.querySelector('h5');
 // card.addEventListener("mouseover", runEvent);
 // card.addEventListener("mouseout", runEvent);
 
-card.addEventListener("mousemove", runEvent);
+// card.addEventListener("mousemove", runEvent);
 
 
 
 
-function runEvent(e) {
-  console.log(`Event type: ${e.type}`)
-  e.preventDefault();
-  heading.textContent = `MouseX: ${e.offsetX} MouseY:${e.offsetY}`;
-  document.body.style.backgroundColor = `rgb(${e.offsetX},${e.offsetY},${e.offsetX / e.offsetY})`;
+// function runEvent(e) {
+//   console.log(`Event type: ${e.type}`)
+//   e.preventDefault();
+//   heading.textContent = `MouseX: ${e.offsetX} MouseY:${e.offsetY}`;
+//   document.body.style.backgroundColor = `rgb(${e.offsetX},${e.offsetY},${e.offsetX / e.offsetY})`;
+// }
+
+// keyboard events
+
+const form = document.querySelector('form');
+const taskInput = document.querySelector('#task');
+const heading = document.querySelector('h5');
+
+taskInput.value = '';
+
+// form.addEventListener('submit', runEvent);
+
+// taskInput.addEventListener('keydown', runEvent);
+// taskInput.addEventListener('keyup', runEvent);
+// taskInput.addEventListener('keypress', runEvent);
+
+taskInput.addEventListener('focus', runEvent);
+taskInput.addEventListener('blur', runEvent);
+taskInput.addEventListener('cut', runEvent);
+taskInput.addEventListener('copy', runEvent);
+taskInput.addEventListener('paste', runEvent);
+//any kind off event from the user
+taskInput.addEventListener('input', runEvent);
+//change - when a change occurs in the select tag
+taskInput.addEventListener('change', runEvent);
+
+function runEvent(event){
+  console.log(`Event type: ${event.type}`)
+  console.log(event.target.value);
+  // heading.innerText = event.target.value;
+  // event.preventDefault();
+  // console.log(taskInput.value);
 }
