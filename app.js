@@ -132,3 +132,5 @@ for(let i = 0; i < liEven.length; i++){
 }
 
 console.log(items);
+
+console.clear();
