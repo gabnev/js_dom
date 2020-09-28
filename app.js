@@ -136,18 +136,18 @@ console.log(items);
 console.clear();
 
 //traverse the dom - move up & down
-let val;
-const list = document.querySelector('ul');
-const listItem = document.querySelector('li.collection-item:first-child');
+// let val;
+// const list = document.querySelector('ul');
+// const listItem = document.querySelector('li.collection-item:first-child');
 
-val = listItem;
-val = list;
+// val = listItem;
+// val = list;
 
 // get child nodelist - the text item is just the line breaks in the html
-val = list.childNodes;
-val = list.childNodes[0];
-val = list.childNodes[0].nodeName;
-val = list.childNodes[1].nodeType;
+// val = list.childNodes;
+// val = list.childNodes[0];
+// val = list.childNodes[0].nodeName;
+// val = list.childNodes[1].nodeType;
 
 // above, the nodeType returns a number. The list bellow show the meanings
 
@@ -159,27 +159,56 @@ val = list.childNodes[1].nodeType;
 //10 - Doctype
 
 // get only children nodes - return html collection, no text
-val = list.children;
-val = list.children[1].textContent = 'hello';
-val = list.children[0].children;
+// val = list.children;
+// val = list.children[1].textContent = 'hello';
+// val = list.children[0].children;
 
-val = list.firstChild;
-val = list.firstElementChild;
+// val = list.firstChild;
+// val = list.firstElementChild;
 
-val = list.lastChild;
-val = list.lastElementChild;
+// val = list.lastChild;
+// val = list.lastElementChild;
 
-val = list.childElementCount;
+// val = list.childElementCount;
 
-val = listItem.parentNode;
-val = listItem.parentElement;
-val = listItem.parentElement.parentElement;
+// val = listItem.parentNode;
+// val = listItem.parentElement;
+// val = listItem.parentElement.parentElement;
 
-val = listItem.nextSibling;
-val = listItem.nextElementSibling;
-val = listItem.nextElementSibling.nextElementSibling;
+// val = listItem.nextSibling;
+// val = listItem.nextElementSibling;
+// val = listItem.nextElementSibling.nextElementSibling;
 
-val = listItem.previousSibling;
-val = listItem.previousElementSibling;
+// val = listItem.previousSibling;
+// val = listItem.previousElementSibling;
 
-console.log(val);
+// console.log(val);
+
+console.clear();
+
+// creating elements
+
+const li = document.createElement('li');
+
+// add lass
+li.className = 'collection-item';
+
+// add id
+li.id = 'new-item';
+
+// add attribute
+li.setAttribute('title', 'New Item');
+
+//create text node & append
+li.appendChild(document.createTextNode('List item'));
+
+// create new link element
+const link = document.createElement('a');
+link.className = 'delete-item secondary-content';
+link.innerHTML = '<i class="fa fa-remove"></i>';
+li.appendChild(link);
+
+//append li as child to ul
+document.querySelector('ul').appendChild(li);
+
+console.log(li);
