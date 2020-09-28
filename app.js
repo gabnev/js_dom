@@ -114,26 +114,26 @@
 // console.log(lis);
 
 // querySelectorAll
-const items = document.querySelectorAll('ul.collection li.collection-item');
+// const items = document.querySelectorAll('ul.collection li.collection-item');
 
-items.forEach((item, index) => {
-  item.textContent = `${index}: Hello World`;
-})
+// items.forEach((item, index) => {
+//   item.textContent = `${index}: Hello World`;
+// })
 
-const liOdd = document.querySelectorAll('li:nth-child(odd');
-const liEven = document.querySelectorAll('li:nth-child(even');
+// const liOdd = document.querySelectorAll('li:nth-child(odd');
+// const liEven = document.querySelectorAll('li:nth-child(even');
 
-liOdd.forEach((li) => {
-  li.style.background = '#ccc';
-})
+// liOdd.forEach((li) => {
+//   li.style.background = '#ccc';
+// })
 
-for(let i = 0; i < liEven.length; i++){
-  liEven[i].style.background = '#eee';
-}
+// for(let i = 0; i < liEven.length; i++){
+//   liEven[i].style.background = '#eee';
+// }
 
-console.log(items);
+// console.log(items);
 
-console.clear();
+// console.clear();
 
 //traverse the dom - move up & down
 // let val;
@@ -212,3 +212,51 @@ li.appendChild(link);
 document.querySelector('ul').appendChild(li);
 
 console.log(li);
+
+console.clear();
+
+//replace elements
+
+const newHeading = document.createElement('h2');
+
+newHeading.id = 'task-title';
+newHeading.appendChild(document.createTextNode('Task List'));
+
+const oldHeading = document.querySelector('#task-title');
+
+//getting the parent
+const cardAction = document.querySelector('.card-action');
+
+//replacing
+cardAction.replaceChild(newHeading, oldHeading);
+
+//remove element
+const lis = document.querySelectorAll('li');
+const list = document.querySelector('ul');
+
+// lis[0].remove();
+// // or
+// list.removeChild(lis[3]);
+
+//classes and attributes
+const firstLi = document.querySelector('li:first-child');
+const aTag = firstLi.children[0];
+
+let val;
+
+val = aTag.className;
+val = aTag.classList;
+val = aTag.classList[0];
+aTag.classList.add('test');
+aTag.classList.remove('test');
+val = aTag;
+
+//Attributes
+val = aTag.getAttribute('href');
+val = aTag.setAttribute('href', 'http://google.com');
+aTag.setAttribute('title', 'google');
+val = aTag.hasAttribute('title');
+val = aTag.removeAttribute('title');
+
+
+console.log(lis[0].innerHTML);
