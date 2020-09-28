@@ -184,79 +184,117 @@
 
 // console.log(val);
 
-console.clear();
+// console.clear();
 
-// creating elements
+// // creating elements
 
-const li = document.createElement('li');
+// const li = document.createElement('li');
 
-// add lass
-li.className = 'collection-item';
+// // add lass
+// li.className = 'collection-item';
 
-// add id
-li.id = 'new-item';
+// // add id
+// li.id = 'new-item';
 
-// add attribute
-li.setAttribute('title', 'New Item');
+// // add attribute
+// li.setAttribute('title', 'New Item');
 
-//create text node & append
-li.appendChild(document.createTextNode('List item'));
+// //create text node & append
+// li.appendChild(document.createTextNode('List item'));
 
 // create new link element
-const link = document.createElement('a');
-link.className = 'delete-item secondary-content';
-link.innerHTML = '<i class="fa fa-remove"></i>';
-li.appendChild(link);
+// const link = document.createElement('a');
+// link.className = 'delete-item secondary-content';
+// link.innerHTML = '<i class="fa fa-remove"></i>';
+// li.appendChild(link);
 
 //append li as child to ul
-document.querySelector('ul').appendChild(li);
+// document.querySelector('ul').appendChild(li);
 
-console.log(li);
+// console.log(li);
 
-console.clear();
+// console.clear();
 
 //replace elements
 
-const newHeading = document.createElement('h2');
+// const newHeading = document.createElement('h2');
 
-newHeading.id = 'task-title';
-newHeading.appendChild(document.createTextNode('Task List'));
+// newHeading.id = 'task-title';
+// newHeading.appendChild(document.createTextNode('Task List'));
 
-const oldHeading = document.querySelector('#task-title');
+// const oldHeading = document.querySelector('#task-title');
 
 //getting the parent
-const cardAction = document.querySelector('.card-action');
+// const cardAction = document.querySelector('.card-action');
 
 //replacing
-cardAction.replaceChild(newHeading, oldHeading);
+// cardAction.replaceChild(newHeading, oldHeading);
 
 //remove element
-const lis = document.querySelectorAll('li');
-const list = document.querySelector('ul');
+// const lis = document.querySelectorAll('li');
+// const list = document.querySelector('ul');
 
 // lis[0].remove();
 // // or
 // list.removeChild(lis[3]);
 
 //classes and attributes
-const firstLi = document.querySelector('li:first-child');
-const aTag = firstLi.children[0];
+// const firstLi = document.querySelector('li:first-child');
+// const aTag = firstLi.children[0];
 
-let val;
+// let val;
 
-val = aTag.className;
-val = aTag.classList;
-val = aTag.classList[0];
-aTag.classList.add('test');
-aTag.classList.remove('test');
-val = aTag;
+// val = aTag.className;
+// val = aTag.classList;
+// val = aTag.classList[0];
+// aTag.classList.add('test');
+// aTag.classList.remove('test');
+// val = aTag;
 
 //Attributes
-val = aTag.getAttribute('href');
-val = aTag.setAttribute('href', 'http://google.com');
-aTag.setAttribute('title', 'google');
-val = aTag.hasAttribute('title');
-val = aTag.removeAttribute('title');
+// val = aTag.getAttribute('href');
+// val = aTag.setAttribute('href', 'http://google.com');
+// aTag.setAttribute('title', 'google');
+// val = aTag.hasAttribute('title');
+// val = aTag.removeAttribute('title');
 
 
-console.log(lis[0].innerHTML);
+// console.log(lis[0].innerHTML);
+
+console.clear();
+
+// event listener
+
+// document.querySelector('.clear-tasks').addEventListener('click', (event)=> {
+  
+//   console.log('hello');
+//   event.preventDefault();
+
+// });
+
+
+document.querySelector('.clear-tasks').addEventListener('click', onClick);
+
+function onClick(event){
+  event.preventDefault();
+  let val;
+
+  val = event;
+  val = event.target;
+  val = event.target.id;
+  val = event.target.className;
+  val = event.target.classList;
+
+  val = event.target.innerText= 'hello';
+
+  val = event.type;
+
+  val = event.timeStamp;
+
+  val = event.clientY;
+  val = event.clientX;
+  val = event.offsetY;
+  val = event.offsetX;
+
+  console.log(val);
+}
