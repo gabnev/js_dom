@@ -273,28 +273,61 @@ console.clear();
 // });
 
 
-document.querySelector('.clear-tasks').addEventListener('click', onClick);
+// document.querySelector('.clear-tasks').addEventListener('click', onClick);
 
-function onClick(event){
-  event.preventDefault();
-  let val;
+// function onClick(event){
+//   event.preventDefault();
+//   let val;
 
-  val = event;
-  val = event.target;
-  val = event.target.id;
-  val = event.target.className;
-  val = event.target.classList;
+//   val = event;
+//   val = event.target;
+//   val = event.target.id;
+//   val = event.target.className;
+//   val = event.target.classList;
 
-  val = event.target.innerText= 'hello';
+//   val = event.target.innerText= 'hello';
 
-  val = event.type;
+//   val = event.type;
 
-  val = event.timeStamp;
+//   val = event.timeStamp;
 
-  val = event.clientY;
-  val = event.clientX;
-  val = event.offsetY;
-  val = event.offsetX;
+//   val = event.clientY;
+//   val = event.clientX;
+//   val = event.offsetY;
+//   val = event.offsetX;
 
-  console.log(val);
+//   val = event.offsetX;
+
+//   console.log(val);
+// }
+
+console.clear();
+
+// mouve events
+
+const clearBtn = document.querySelector('.clear-tasks');
+const card = document.querySelector('.card');
+const heading = document.querySelector('h5');
+
+// // clearBtn.addEventListener('click', runEvent);
+// // clearBtn.addEventListener("dblclick", runEvent);
+// clearBtn.addEventListener("mousedown", runEvent);
+// clearBtn.addEventListener("mouseup", runEvent);
+// //mouseenter and leave only fire up when entering the MAIN element
+// card.addEventListener("mouseenter", runEvent);
+// card.addEventListener("mouseleave", runEvent);
+// //mouseover and out fireup when dealing with any element
+// card.addEventListener("mouseover", runEvent);
+// card.addEventListener("mouseout", runEvent);
+
+card.addEventListener("mousemove", runEvent);
+
+
+
+
+function runEvent(e) {
+  console.log(`Event type: ${e.type}`)
+  e.preventDefault();
+  heading.textContent = `MouseX: ${e.offsetX} MouseY:${e.offsetY}`;
+  document.body.style.backgroundColor = `rgb(${e.offsetX},${e.offsetY},${e.offsetX / e.offsetY})`;
 }
